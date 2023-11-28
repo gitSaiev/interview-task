@@ -4,10 +4,7 @@ import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class LibraryDto {
     private Long id;
     private String name;

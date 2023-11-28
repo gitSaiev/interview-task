@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 @Table(name = "students", schema = "interview")
 public class Student {
 
@@ -23,10 +20,11 @@ public class Student {
     private String lastName;
 
     @ManyToOne
-    @JoinColumn(name = "library_id")
+    @JoinColumn(name = "student_library_id")
     private Library library;
 
     @OneToOne
-    @Column(name = "student_id")
+    @MapsId
+    @JoinColumn(name = "student_id")
     private Student student;
 }
