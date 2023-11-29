@@ -1,22 +1,21 @@
 package ru.saiev.interviewtask.controller;
 
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.saiev.interviewtask.dto.LibraryDto;
 import ru.saiev.interviewtask.exception.LibraryNotFoundException;
-import ru.saiev.interviewtask.exception.StudentNotFoundException;
 import ru.saiev.interviewtask.service.LibraryService;
 
 import java.util.List;
 
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("api/libraries")
 public class LibraryController {
 
-    private LibraryService libraryService;
+    private final LibraryService libraryService;
 
     @PostMapping
     public ResponseEntity<LibraryDto> createLibrary(@RequestBody LibraryDto libraryDto) {

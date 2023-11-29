@@ -1,7 +1,6 @@
 package ru.saiev.interviewtask.service.impl;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.saiev.interviewtask.dto.LibraryDto;
 import ru.saiev.interviewtask.entity.Library;
@@ -13,11 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class LibraryServiceImpl implements LibraryService {
 
-    private LibraryRepository libraryRepository;
+    private final LibraryRepository libraryRepository;
 
     @Override
     public LibraryDto createLibrary(LibraryDto libraryDto) {

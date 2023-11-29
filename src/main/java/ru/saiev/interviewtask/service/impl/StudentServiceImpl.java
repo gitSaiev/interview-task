@@ -1,7 +1,6 @@
 package ru.saiev.interviewtask.service.impl;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.saiev.interviewtask.dto.StudentDto;
 import ru.saiev.interviewtask.entity.Student;
@@ -13,11 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     @Override
     public StudentDto createStudent(StudentDto studentDto) {
